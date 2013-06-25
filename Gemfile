@@ -12,9 +12,11 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bcrypt-ruby'
 gem 'active_model_serializers'
+gem 'inherited_resources'
 
 gem 'ember-rails'
 gem 'ember-auth-rails'
+gem 'handlebars-source', '1.0.0.rc4'
 
 gem 'thin'
 gem 'dotenv'
@@ -32,6 +34,9 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'fabrication'
+  gem 'shoulda'
+  gem 'ffaker'
 end
 
 

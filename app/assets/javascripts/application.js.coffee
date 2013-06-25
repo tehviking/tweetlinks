@@ -1,0 +1,10 @@
+#= require jquery
+#= require jquery_ujs
+#= require handlebars
+#= require ember
+#= require ember-data
+#= require ember-auth
+#= require_self
+#= require tweetlinks
+#= require_tree .
+window.Tweetlinks = Em.Application.create()
