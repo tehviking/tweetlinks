@@ -19,6 +19,6 @@
 //= require tweetlinks
 
 // for more details see: http://emberjs.com/guides/application/
-Tweetlinks = Ember.Application.create();
+App = Ember.Application.create();
 
 //= require_tree .

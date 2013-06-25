@@ -1,6 +1,2 @@
-# http://emberjs.com/guides/models/defining-a-store/
-
-Tweetlinks.Store = DS.Store.extend
-  revision: 11
+App.Store = DS.Store.extend
   adapter: DS.RESTAdapter.create()
-
