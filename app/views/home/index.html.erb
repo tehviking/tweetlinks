@@ -1,0 +1,10 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<div id="user_nav">
+  <% if current_user %>
+    Signed in as <%= current_user.name %>
+  <% else %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter"%>
+  <% end %>
+</div>

@@ -11,6 +11,8 @@ gem 'active_model_serializers'
 gem 'ember-rails'
 gem 'ember-source', '1.0.0.rc6'
 gem 'handlebars-source', '1.0.0.rc4'
+gem 'omniauth-twitter'
+gem 'dotenv'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -26,4 +28,4 @@ gem 'thin'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
