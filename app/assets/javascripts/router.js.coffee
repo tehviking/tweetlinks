@@ -2,5 +2,5 @@
 
 App.Router.map ->
   @route 'login', path: '/login'
-  # @resource('posts')
+  @resource 'links', path: '/'
 
