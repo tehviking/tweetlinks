@@ -1,0 +1,1 @@
+App.SharedItemsRoute = App.AuthenticatedRoute.extend()
