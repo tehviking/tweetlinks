@@ -19,10 +19,13 @@ ActiveRecord::Schema.define(version: 20130630034142) do
     t.string   "tweet_uid"
     t.string   "twitter_username"
     t.string   "url"
+    t.string   "display_url"
     t.string   "tweet_body"
     t.datetime "shared_at"
     t.string   "sharer_avatar_url"
     t.string   "title"
+    t.string   "read_state",        default: "unread"
+    t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20130630034142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "twitter_token"
+    t.string   "twitter_secret"
   end
 
 end

@@ -3,7 +3,7 @@ Tweetlinks::Application.routes.draw do
   match '/auth/:provider/callback' => 'sessions#create', via: %w(get post)
   match '/auth/failure' => redirect('/'), via: %w(get post)
   match '/signout' => 'sessions#destroy', via: %w(get delete), as: :logout
-  match '(*url)' => 'home#index', constraints: :html, via: %w(get post)
+  match "/*path" => "home#index", via: %w(get post)
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

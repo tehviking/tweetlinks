@@ -6,10 +6,13 @@ class CreateSharedItems < ActiveRecord::Migration
       t.string :tweet_uid
       t.string :twitter_username
       t.string :url
+      t.string :display_url
       t.string :tweet_body
       t.datetime :shared_at
       t.string :sharer_avatar_url
       t.string :title
+      t.string :read_state, default: "unread"
+      t.string :source
 
       t.timestamps
     end
