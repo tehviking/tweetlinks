@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130625042005) do
+ActiveRecord::Schema.define(version: 20130630034142) do
+
+  create_table "shared_items", force: true do |t|
+    t.integer  "user_id"
+    t.string   "twitter_user_uid"
+    t.string   "tweet_uid"
+    t.string   "twitter_username"
+    t.string   "url"
+    t.string   "tweet_body"
+    t.datetime "shared_at"
+    t.string   "sharer_avatar_url"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -19,6 +33,7 @@ ActiveRecord::Schema.define(version: 20130625042005) do
     t.string   "provider"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "twitter_token"
   end
 
 end

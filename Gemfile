@@ -13,6 +13,7 @@ gem 'ember-source', '1.0.0.rc6'
 gem 'handlebars-source', '1.0.0.rc4'
 gem 'omniauth-twitter'
 gem 'dotenv'
+gem 'twitter'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

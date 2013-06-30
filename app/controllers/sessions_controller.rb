@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
     session[:twitter_token] = env['omniauth.auth']['credentials']['token']
+    user.update_attribute(:twitter_token, session[:twitter_token])
     session[:token] = SecureRandom.hex(16)
     redirect_to root_url, notice: "Signed in."
   end
