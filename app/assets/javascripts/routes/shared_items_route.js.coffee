@@ -1,1 +1,3 @@
-App.SharedItemsRoute = App.AuthenticatedRoute.extend()
+App.SharedItemsRoute = App.AuthenticatedRoute.extend
+  model: ->
+    App.SharedItem.find()

@@ -3,6 +3,12 @@ Tweetlinks::Application.routes.draw do
   match '/auth/:provider/callback' => 'sessions#create', via: %w(get post)
   match '/auth/failure' => redirect('/'), via: %w(get post)
   match '/signout' => 'sessions#destroy', via: %w(get delete), as: :logout
+
+  namespace :api do
+    resources :users, only: [:index, :show]
+    resources :shared_items
+  end
+
   match "/*path" => "home#index", via: %w(get post)
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
