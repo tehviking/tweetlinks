@@ -1,0 +1,239 @@
+body {
+    color: #555;
+    font-family: 'Noto Serif', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #1b98f8;
+}
+
+/* LAYOUT CSS */
+#layout {
+    padding-left:500px; /* "left col (nav + list)" width */
+    position: relative;
+}
+
+#nav, #list {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+#nav {
+    margin-left:-500px; /* "left col (nav + list)" width */
+    width:150px;
+    background: rgb(37, 42, 58);
+    text-align: center;
+    padding: 2em 0;
+}
+
+#list {
+    margin-left: -350px;
+    width:350px;
+    border-right: 1px solid #ddd;
+}
+
+#main {
+    width: 100%;
+}
+
+/* HELPER CLASSES */
+.primary-button,
+.secondary-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.primary-button {
+    color: #fff;
+    background: #1b98f8;
+    margin: 1em 0;
+}
+.secondary-button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 0.5em 2em;
+    font-size: 80%;
+}
+
+
+
+/* Vertical Navigation Styles */
+#nav .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+    #nav .pure-menu a:hover,
+    #nav .pure-menu a:focus {
+        background: rgb(55, 60, 90);
+    }
+    #nav .pure-menu a {
+        color: #fff;
+        margin-left: 0.5em;
+    }
+    #nav .pure-menu-heading {
+        border-bottom: none;
+        font-size:110%;
+        color: rgb(75, 113, 151);
+    }
+
+    #nav .nav-menu-button {
+        display: none;
+    }
+
+    .tweet-count {
+        color: rgb(75, 113, 151);
+    }
+
+    .tweet-label-personal,
+    .tweet-label-work,
+    .tweet-label-travel {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 0.5em;
+        border-radius: 3px;
+    }
+    .tweet-label-personal {
+        background: #ffc94c;
+    }
+    .tweet-label-work {
+        background: #41ccb4;
+    }
+    .tweet-label-travel {
+        background: #40c365;
+    }
+
+
+
+
+/* tweet Item Styles */
+.tweet-item {
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #ddd;
+    border-left: 6px solid transparent;
+}
+    .tweet-avatar {
+        border-radius: 3px;
+        margin-right: 0.5em;
+    }
+    .tweet-name, .tweet-subject {
+        margin: 0;
+    }
+
+    .tweet-subject {
+        font-size: 14px;
+    }
+
+    .tweet-name {
+        text-transform: uppercase;
+        color: #999;
+    }
+
+    .tweet-desc {
+        font-size: 80%;
+        margin: 0.4em 0;
+    }
+
+
+a.tweet-item-link {
+    display: block;
+    color: #555;
+}
+.tweet-item-selected, a.tweet-item-link.active {
+    background: #eee;
+}
+.tweet-item-unread {
+    border-left: 6px solid #02a3c6;
+}
+
+/* tweet Content Styles */
+.tweet-content-header, .tweet-content-body, .tweet-content-footer {
+    padding: 1em 2em;
+}
+    .tweet-content-header {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .tweet-content-title {
+            margin: 0.5em 0 0;
+        }
+        .tweet-content-subtitle {
+            font-size: 1em;
+            margin: 0;
+            font-weight: normal;
+        }
+            .tweet-content-subtitle span {
+                color: #999;
+            }
+    .tweet-content-controls {
+        margin-top: 2em;
+        text-align: right;
+    }
+        .tweet-content-controls .secondary-button {
+            margin-bottom: 0.3em;
+        }
+
+
+@media (max-width: 867px) {
+
+    #list, #main {
+        width: auto;
+    }
+    #layout {
+        padding-left: -150px;
+    }
+    #list {
+        width: auto;
+        height: 33%;
+        border-bottom: 1px solid #ddd;
+    }
+    #main {
+        position: fixed;
+        top: 33%;
+        right: 0;
+        bottom: 0;
+        left: 150px;
+        overflow: auto;
+        width: auto; /* so that it's not 100% */
+    }
+}
+
+@media (max-width: 480px) {
+    #layout, #nav, #list, #main {
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+    #nav {
+        width: 100%;
+        height: 40px;
+        position: relative;
+    }
+    #nav .nav-menu-button {
+        display: block;
+        top: 0.5em;
+        right: 0.5em;
+        position: absolute;
+    }
+    #nav.active {
+        height: 80%;
+    }
+    .nav-inner {
+        display: none;
+    }
+    #nav.active .nav-inner {
+        display: block;
+    }
+    .tweet-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}

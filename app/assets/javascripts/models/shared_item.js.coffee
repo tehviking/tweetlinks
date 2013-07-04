@@ -13,5 +13,9 @@ App.SharedItem = Ember.Model.extend
   read_state: Ember.attr()
   source: Ember.attr()
 
+  isUnread: (->
+    @get("read_state") == "unread"
+  ).property("read_state")
+
 App.SharedItem.url = "/api/shared_items"
 App.SharedItem.adapter = Ember.RESTAdapter.create()
