@@ -1,12 +1,32 @@
-<p>Shared item goes here!</p>
+<div class="pure-u" id="main">
+  <div class="content">
+    <div class="email-content pure-g">
+      <div class="email-content-header pure-g">
+        <div class="pure-u-1-2">
+          <h1 class="email-content-title">{{readableItem.title}}</h1>
+            {{readableItem.domain}}
+          <p class="email-content-subtitle">
+            By {{readableItem.author}} at <span>{{shared_at}}</span>
+          </p>
+        </div>
 
-<p>{{readableItem.url}}</p>
-<p>{{readableItem.title}}</p>
-<p>{{readableItem.author}}</p>
-<p>{{readableItem.domain}}</p>
-<p>Content:</p>
-{{#if readableItem.content}}
-  <p>{{{readableItem.content}}</p>
-{{else}}
-  <p>Loading...</p>
-{{/if}}
+<!--         <div class="pure-u-1-2 email-content-controls">
+          <button class="pure-button secondary-button">Reply</button>
+          <button class="pure-button secondary-button">Forward</button>
+          <button class="pure-button secondary-button">Move to</button>
+        </div> -->
+      </div>
+
+      <div class="email-content-body pure-u-1">
+        <p>Click here for original link:</p>
+        <p><a {{bindAttr src="readableItem.url"}} target="_blank">{{readableItem.url}}</a></p>
+        
+        {{#if readableItem.content}}
+          <p>{{{readableItem.content}}</p>
+        {{else}}
+          <p>Loading...</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
