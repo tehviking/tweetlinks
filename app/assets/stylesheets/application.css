@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require pure-min
- *= require email
+ *= require tweet
  *= require_tree .
  */

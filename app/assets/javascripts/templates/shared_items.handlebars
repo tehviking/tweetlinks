@@ -12,15 +12,15 @@
 
       <div class="pure-menu pure-menu-open">
         <ul>
-          <li><a href="#">All <span class="email-count">(2)</span></a></li>
+          <li><a href="#">All <span class="tweet-count">(2)</span></a></li>
           <li><a href="#">Favorites</a></li>
           <li><a href="#">My Tweets</a></li>
           <li><a href="#">Mentions</a></li>
           <li><a href="#">My Timeline</a></li>
           <li class="pure-menu-heading">Labels</li>
-          <li><a href="#"><span class="email-label-personal"></span>Personal</a></li>
-          <li><a href="#"><span class="email-label-work"></span>Work</a></li>
-          <li><a href="#"><span class="email-label-travel"></span>Travel</a></li>
+          <li><a href="#"><span class="tweet-label-personal"></span>Personal</a></li>
+          <li><a href="#"><span class="tweet-label-work"></span>Work</a></li>
+          <li><a href="#"><span class="tweet-label-travel"></span>Travel</a></li>
         </ul>
       </div>
     </div>
@@ -29,17 +29,17 @@
   <div class="pure-u" id="list">
     <div class="content">
       {{#each item in model}}
-        {{#linkTo 'sharedItem' item}}
-          <div class="email-item email-item-selected pure-g">
+        {{#linkTo 'sharedItem' item class="tweet-item-link"}}
+          <div {{bindAttr class="item.isUnread:tweet-item-unread:tweet-item-read :tweet-item :pure-g"}}>
             <div class="pure-u">
-              <img {{bindAttr src="item.sharer_avatar_url"}} class="email-avatar" height="64" width="64">
+              <img {{bindAttr src="item.sharer_avatar_url"}} class="tweet-avatar" height="64" width="64">
             </div>
 
             <div class="pure-u-3-4">
-              <h5 class="email-name">{{item.url}}</h5>
-              <h4 class="email-subject">{{item.url}}</h4>
-              <p class="email-desc">
-                {{item.url}}
+              <h5 class="tweet-name">@{{item.twitter_username}}</h5>
+              <p class="tweet-subject">{{item.tweet_body}}</p>
+              <p class="tweet-desc">
+                {{item.display_url}}
               </p>
             </div>
           </div>
