@@ -1,0 +1,7 @@
+<h1>Application Template</h1>
+{{#if App.token}}
+  <p>Logged in. <a href="/signout">Sign out</a></p>
+{{else}}
+  <p><a href="/auth/twitter">Log in with Twitter</a></p>
+{{/if}}
+{{outlet}}

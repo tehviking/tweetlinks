@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require handlebars
 //= require ember
-//= require ember-data
+//= require ember-model
 //= require_self
 //= require tweetlinks
 
