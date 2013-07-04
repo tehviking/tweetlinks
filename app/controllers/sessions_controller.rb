@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     user.twitter_token = session[:twitter_token]
     user.twitter_secret = session[:twitter_secret]
     user.save
-    SharedItem.import_for_user(user)
     redirect_to root_url, notice: "Signed in."
   end
 

@@ -2,7 +2,7 @@ Shared items list, woo!
 <p>Sidebar goes here</p>
 
 {{#each item in model}}
-  <li>{{#linkTo 'sharedItem' item}}{{item.id}}{{/linkTo}}</li>
+  <li>{{#linkTo 'sharedItem' item}}{{item.url}}{{/linkTo}} (from {{item.source}})</li>
 {{else}}
   No items.
 {{/each}}
