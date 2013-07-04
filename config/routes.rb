@@ -7,6 +7,7 @@ Tweetlinks::Application.routes.draw do
   namespace :api do
     resources :users, only: [:index, :show]
     resources :shared_items
+    resources :readable_items
   end
 
   match "/*path" => "home#index", via: %w(get post)

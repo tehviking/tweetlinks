@@ -1,3 +1,12 @@
 <p>Shared item goes here!</p>
 
-{{url}}
+<p>{{readableItem.url}}</p>
+<p>{{readableItem.title}}</p>
+<p>{{readableItem.author}}</p>
+<p>{{readableItem.domain}}</p>
+<p>Content:</p>
+{{#if readableItem.content}}
+  <p>{{{readableItem.content}}</p>
+{{else}}
+  <p>Loading...</p>
+{{/if}}

@@ -72,6 +72,9 @@ GEM
     handlebars-source (1.0.0.rc4)
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.4)
     jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
@@ -84,6 +87,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     oauth (0.4.7)
     omniauth (1.1.4)
@@ -170,6 +174,7 @@ DEPENDENCIES
   ember-rails
   ember-source (= 1.0.0.rc6)
   handlebars-source (= 1.0.0.rc4)
+  httparty
   jquery-rails
   omniauth-twitter
   rails (~> 4.0.0)
