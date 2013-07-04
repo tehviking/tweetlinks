@@ -30,7 +30,7 @@
     <div class="content">
       {{#each item in model}}
         {{#linkTo 'sharedItem' item class="tweet-item-link"}}
-          <div {{bindAttr class="item.isUnread:tweet-item-unread:tweet-item-read :tweet-item :pure-g"}}>
+          <div {{action "select" item}} {{bindAttr class="item.isUnread:tweet-item-unread:tweet-item-read :tweet-item :pure-g"}}>
             <div class="pure-u">
               <img {{bindAttr src="item.sharer_avatar_url"}} class="tweet-avatar" height="64" width="64">
             </div>
