@@ -1,5 +1,8 @@
-# For more information see: http://emberjs.com/guides/routing/
+App.Router.map ->
+  @route 'landing', path: '/start'
+  @resource 'sharedItems', path: '/', ->
+    @resource 'sharedItem',  path: '/:shared_item_id'
+  @route "fourOhFoured", path: "*:"
 
-App.Router.map ()->
-  # @resource('posts')
-
+App.Router.reopen
+  location: 'history'
