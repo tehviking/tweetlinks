@@ -3,6 +3,7 @@
 <head>
   <title>Tweetlinks</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,400italic,900italic|Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <script>App.set('token', '<%= logged_in? ? token : '' %>');</script>
