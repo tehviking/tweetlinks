@@ -12,11 +12,11 @@
 
       <div class="pure-menu pure-menu-open">
         <ul>
-          <li><a href="#">All <span class="tweet-count">(2)</span></a></li>
-          <li><a href="#">Favorites</a></li>
-          <li><a href="#">My Tweets</a></li>
-          <li><a href="#">Mentions</a></li>
-          <li><a href="#">My Timeline</a></li>
+          <li><a href="#" {{action removeFilter}}>All <span class="tweet-count">(2)</span></a></li>
+          <li><a href="#" {{action applyFilter "favorites"}}>Favorites</a></li>
+          <li><a href="#" {{action applyFilter "user_timeline"}}>My Tweets</a></li>
+          <li><a href="#" {{action applyFilter "mentions_timeline"}}>Mentions</a></li>
+          <li><a href="#" {{action applyFilter "home_timeline"}}>My Timeline</a></li>
           <li class="pure-menu-heading">Labels</li>
           <li><a href="#"><span class="tweet-label-personal"></span>Personal</a></li>
           <li><a href="#"><span class="tweet-label-work"></span>Work</a></li>
@@ -28,7 +28,7 @@
 
   <div class="pure-u" id="list">
     <div class="content">
-      {{#each item in model}}
+      {{#each item in filteredContent}}
         {{#linkTo 'sharedItem' item class="tweet-item-link"}}
           <div {{action "select" item}} {{bindAttr class="item.isUnread:tweet-item-unread:tweet-item-read :tweet-item :pure-g"}}>
             <div class="pure-u">
