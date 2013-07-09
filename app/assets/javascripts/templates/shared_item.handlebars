@@ -6,23 +6,24 @@
           <h1 class="tweet-content-title">{{readableItem.title}}</h1>
             {{readableItem.domain}}
           <p class="tweet-content-subtitle">
-            By {{readableItem.author}} at <span>{{shared_at}}</span>
+            {{readableItem.author}} <br /><span>Shared: {{date shared_at}}</span>
           </p>
         </div>
 
         <div class="pure-u-1-2 tweet-content-controls">
           <button class="pure-button secondary-button"{{action markUnread model}}>Mark Unread</button>
+          <a {{bindAttr href="url"}} target="_blank">
+            <button class="pure-button secondary-button">View Original</button>
+          </a>
         </div>
       </div>
 
-      <div class="tweet-content-body pure-u-1">
-        <p>Click here for original link:</p>
-        <p><a {{bindAttr href="url"}} target="_blank">{{url}}</a></p>
-        
+      <div class="tweet-content-body pure-u-1">        
         {{#if readableItem.content}}
           <p>{{{readableItem.content}}</p>
         {{else}}
           <p>Loading...</p>
+          <img src="/assets/loading.gif"/>
         {{/if}}
       </div>
     </div>
