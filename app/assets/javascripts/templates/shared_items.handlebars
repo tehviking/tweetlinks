@@ -12,15 +12,14 @@
 
       <div class="pure-menu pure-menu-open">
         <ul>
-          <li><a href="#" {{action removeFilter}}>All <span class="tweet-count">(2)</span></a></li>
+          <li><a href="#" {{action removeFilters}}>All <span class="tweet-count">({{content.length}})</span></a></li>
           <li><a href="#" {{action applyFilter "favorites"}}>Favorites</a></li>
           <li><a href="#" {{action applyFilter "user_timeline"}}>My Tweets</a></li>
           <li><a href="#" {{action applyFilter "mentions_timeline"}}>Mentions</a></li>
           <li><a href="#" {{action applyFilter "home_timeline"}}>My Timeline</a></li>
-          <li class="pure-menu-heading">Labels</li>
-          <li><a href="#"><span class="tweet-label-personal"></span>Personal</a></li>
-          <li><a href="#"><span class="tweet-label-work"></span>Work</a></li>
-          <li><a href="#"><span class="tweet-label-travel"></span>Travel</a></li>
+          <li class="pure-menu-heading">Show</li>
+          <li><a href="#" {{action applyUnreadFilter "unread"}}>Unread <span class="tweet-count">({{unreadContent.length}})</span></a></li>
+          <li><a href="#" {{action applyUnreadFilter "read"}}>Read <span class="tweet-count">({{readContent.length}})</span></a></li>
         </ul>
       </div>
     </div>

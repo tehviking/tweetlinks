@@ -119,6 +119,7 @@ a {
     padding: 0.9em 1em;
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
+    overflow: hidden;
 }
     .tweet-avatar {
         border-radius: 3px;
@@ -157,6 +158,7 @@ a.tweet-item-link {
 /* tweet Content Styles */
 .tweet-content-header, .tweet-content-body, .tweet-content-footer {
     padding: 1em 2em;
+    overflow: hidden;
 }
     .tweet-content-header {
         border-bottom: 1px solid #ddd;
