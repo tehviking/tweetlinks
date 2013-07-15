@@ -5,6 +5,16 @@ App.SharedItemsController = Ember.ArrayController.extend
     item.save()
     @transitionToRoute("sharedItem", item)
 
+  nextItem: ->
+    item = @get('currentlyReading') or @get('filteredContent').objectAt(0)
+    index = @get("filteredContent").indexOf(item)
+    @transitionToRoute("sharedItem", @get("content").objectAt(index + 1))
+
+  prevItem: ->
+    item = @get('currentlyReading') or @get('filteredContent').objectAt(0)
+    index = @get("filteredContent").indexOf(item)
+    @transitionToRoute("sharedItem", @get("content").objectAt(index - 1))
+
   sourceFilteredContent: (->
     filter = @get 'sourceFilter'
     if filter

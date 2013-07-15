@@ -12,10 +12,12 @@
 
       <div class="pure-menu pure-menu-open">
         <ul>
+          <li><a href="#" {{action nextItem}}>Next</a></li>
+          <li><a href="#" {{action prevItem}}>Previous</a></li>
           <li><a href="#" {{action removeFilters}}>All <span class="tweet-count">({{content.length}})</span></a></li>
           <li><a href="#" {{action applyFilter "favorites"}}>Favorites</a></li>
-          <li><a href="#" {{action applyFilter "user_timeline"}}>My Tweets</a></li>
           <li><a href="#" {{action applyFilter "mentions_timeline"}}>Mentions</a></li>
+          <li><a href="#" {{action applyFilter "home_timeline"}}>My Timeline</a></li>
           <li><a href="#" {{action applyFilter "home_timeline"}}>My Timeline</a></li>
           <li class="pure-menu-heading">Show</li>
           <li><a href="#" {{action applyUnreadFilter "unread"}}>Unread <span class="tweet-count">({{unreadContent.length}})</span></a></li>
