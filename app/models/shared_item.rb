@@ -1,6 +1,8 @@
 class SharedItem < ActiveRecord::Base
   belongs_to :user
+  has_many :readable_items
   validates_uniqueness_of :url, scope: :user_id
+  after_create :create_readable_item
 
   default_scope {order("shared_at DESC")}
 
@@ -49,6 +51,10 @@ class SharedItem < ActiveRecord::Base
         end
       end
     end
+  end
+
+  def create_readable_item
+    self.readable_items.create unless self.readable_items.present?
   end
 end
 

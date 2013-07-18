@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130630034142) do
+ActiveRecord::Schema.define(version: 20130718010711) do
+
+  create_table "readable_items", force: true do |t|
+    t.integer "shared_item_id"
+    t.text    "content"
+    t.string  "domain"
+    t.string  "title"
+    t.string  "author"
+  end
 
   create_table "shared_items", force: true do |t|
     t.integer  "user_id"
