@@ -17,5 +17,9 @@ App.SharedItem = Ember.Model.extend
     @get("read_state") == "unread"
   ).property("read_state")
 
+  isGif: (->
+    @get("url").match(/\.gif$/)?
+  ).property("url")
+
 App.SharedItem.url = "/api/shared_items"
 App.SharedItem.adapter = Ember.RESTAdapter.create()

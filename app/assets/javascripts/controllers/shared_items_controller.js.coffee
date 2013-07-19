@@ -20,10 +20,16 @@ App.SharedItemsController = Ember.ArrayController.extend
   sourceFilteredContent: (->
     filter = @get 'sourceFilter'
     if filter
+      if filter is 'gifs'
+        return @get('gifsContent')
       @get("content").filterProperty "source", filter
     else
       @get('content')
   ).property('content.@each.source', 'sourceFilter')
+
+  gifsContent: (->
+    @get('content').filterProperty('isGif',true)
+  ).property('sourceFilteredContent.@each.url')
 
   filteredContent: (->
     filter = @get 'unreadFilter'
