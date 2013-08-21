@@ -19,6 +19,10 @@ module Api
       end
     end
 
+    def refresh_feed
+      SharedItem.import_for_user(current_user)
+    end
+
     private
     def shared_item_params
       params.require(:shared_item).permit(:read_state)
